@@ -1,0 +1,14 @@
+const roles = [
+    {
+     "_id": 1,
+     "role_name": "Team Captain",
+    },
+    {
+        "_id": 2,
+        "role_name": "Team Member",
+    },
+    {
+        "_id": 3,
+        "role_name": "Admin",
+    }
+]

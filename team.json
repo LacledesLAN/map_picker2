@@ -1,0 +1,22 @@
+const team = [
+    {
+     "_id": 1,
+     "team_name": "Team LL CSGO",
+     "user_id": [1,2,3,4],
+     "game_id": 0,
+     "selection_history": [
+         {"map_id": "dust_II", "choice": "ban", "bracket_round": 1, "competitor_id": 2},
+         {"map_id": "inferno", "choice": "select", "bracket_round": 1, "competitor_id": 2},
+     ]
+    },
+    {
+        "_id": 2,
+        "team_name": "Team LL Overwatch",
+        "user_id": [1,2,3,4],
+        "game_id": 1,
+        "selection_history": [
+            {"map_id": "ilios", "choice": "ban", "bracket_round": 1, "competitor_id": 1},
+            {"map_id": "hollywood", "choice": "select", "bracket_round": 1, "competitor_id": 1},
+        ]
+       },
+]
