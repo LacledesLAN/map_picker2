@@ -1,0 +1,13 @@
+.game-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-selector div,
+.game-selector img {
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
