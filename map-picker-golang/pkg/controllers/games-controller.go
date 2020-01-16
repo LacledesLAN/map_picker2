@@ -1,14 +1,18 @@
 package controllers
 
 import(
+	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/lacledeslan/map_picker2/pkg/models"
+	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 )
 
 var NewGame models.Game
+
 
 
 func CreateGame(w http.ResponseWriter, r *http.Request) {
@@ -24,8 +28,25 @@ func DeleteGame(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetAllGames(w http.ResponseWriter, r *http.Request) {
+	pwd, _ := os.Getwd()
+	//read in json file
+	data, err := ioutil.ReadFile(pwd+ "/data-responses/games.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	dataBytes := []byte(data)
+
+	obj := models.Games{}
+
+	// unmarshall json file
+	err = json.Unmarshal(dataBytes, &obj)
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprint(w, "Here Are Some Games")
+	fmt.Fprint(w, obj)
 }
 
 

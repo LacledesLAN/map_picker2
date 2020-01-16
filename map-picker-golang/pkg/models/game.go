@@ -1,20 +1,32 @@
 package models
 
+type Games struct {
+	Games []Game `json:"games"`
+}
+
 type Game struct {
-	Id 					string `json:"id"`
-	Name 				string `json:"name"`
-	BackgroundImage 	string `json:"background_image"`
-	Logo				string `json:"logo"`
-	URL					string `json:"url"`
-	GameMapList			string `json:"game_map_list"`
+	Id 					int
+	Name 				string
+	Backgroud_image 	string
+	Logo				string
+	Url					string
+	GameMapList		[]GameMapList
+	Columns				[]Columns
 }
 
 type GameMapList struct {
-	Id 					string `json:"id"`
-	Image 				string `json:"image"`
-	Action 				string `json:"action"`
-	SelectedOrder		string `json:"selected_order"`
-	ColumnId			string `json:"column_id"`
+	Id            string
+	Image         string
+	Action        string
+	SelectedOrder string
+	ColumnID      int
+}
+
+type Columns struct {
+	Id				int
+	Name			string
+	MaxSelection 	int
+	MaxBan			int
 }
 
 
