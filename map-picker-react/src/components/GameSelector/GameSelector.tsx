@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import "./GameSelector.css";
+import React, { FC } from 'react';
+import './GameSelector.css';
 
 declare interface GameSelectorProps {
   gameId?: number;

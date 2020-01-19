@@ -1,9 +1,11 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import App from "./App";
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from './App';
 
-test("renders game logos", () => {
-  const testObject = render(<App />);
-  const linkElement = testObject.getByAltText("logo");
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  it('renders two game logos', () => {
+    const testObject = render(<App />);
+    const linkElement = testObject.getAllByAltText('logo');
+    expect(linkElement).toHaveLength(2);
+  });
 });

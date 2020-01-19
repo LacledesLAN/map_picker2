@@ -1,10 +1,13 @@
-import React, { FC } from "react";
-import "./MapPicker.css";
-import GameSelector from "../../components/GameSelector/GameSelector";
-import csgoLogo from "../../assets/images/map_picker/csgo/logo_white.png";
-import csgoBackground from "../../assets/images/map_picker/csgo/logo_background.jpg";
-import overwatchLogo from "../../assets/images/map_picker/overwatch/logo_white.png";
-import overwatchBackground from "../../assets/images/map_picker/overwatch/logo_background.jpg";
+import React, { FC } from 'react';
+import './MapPicker.css';
+import GameSelector from '../../components/GameSelector/GameSelector';
+
+const csgoLogo = '../../assets/images/map_picker/csgo/logo_white.png';
+const csgoBackground =
+  '../../assets/images/map_picker/csgo/logo_background.jpg';
+const overwatchLogo = '../../assets/images/map_picker/overwatch/logo_white.png';
+const overwatchBackground =
+  '../../assets/images/map_picker/overwatch/logo_background.jpg';
 
 const MapPicker: FC = () => {
   return (
