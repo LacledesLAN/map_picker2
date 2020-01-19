@@ -10,17 +10,18 @@
     "@types/node": "^12.12.24",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
-    "eslint-config-airbnb-typescript-prettier": "^1.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"./src/**/*.{ts,tsx}\" --fix"
   },
   "eslintConfig": {
     "extends": "airbnb-typescript-prettier"
@@ -36,5 +37,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript-prettier": "^1.4.2",
+    "eslint-plugin-jest": "^23.6.0",
+    "prettier": "^1.19.1"
   }
 }
