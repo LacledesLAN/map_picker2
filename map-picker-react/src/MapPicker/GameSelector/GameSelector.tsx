@@ -15,7 +15,8 @@ const GameSelector: FC<GameSelectorProps> = ({ logoUrl, backgroundUrl }) => {
   return (
     <div
       className="game-selector"
-      style={{ backgroundImage: `url(${background})` }}
+      style={{ backgroundImage: `url(${backgroundUrl})` }}
+      data-testid="background"
     >
       <div>
         <img src={logo} className="game-selector" alt="logo" />

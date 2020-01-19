@@ -3,9 +3,25 @@ import { render } from '@testing-library/react';
 import GameSelector from './GameSelector';
 
 describe('GameSelector', () => {
-  it('displays a background that is passed in as the prop', () => {
+  it('displays a background that is passed in as a prop', () => {
     const testBackground = 'test-background-url';
 
-    render(<GameSelector logoUrl="" backgroundUrl={testBackground} />);
+    const testObject = render(
+      <GameSelector logoUrl="" backgroundUrl={testBackground} />
+    );
+
+    expect(testObject.getByTestId('background')).toHaveStyle(
+      `background-image: url(${testBackground})`
+    );
+  });
+
+  it('displays a logo that is passed in as a prop', async () => {
+    const testLogo = 'test-logo-url';
+
+    const testObject = render(
+      <GameSelector logoUrl={testLogo} backgroundUrl="" />
+    );
+    const img = await testObject.findByAltText('logo');
+    expect(img).toHaveAttribute('src', testLogo);
   });
 });
