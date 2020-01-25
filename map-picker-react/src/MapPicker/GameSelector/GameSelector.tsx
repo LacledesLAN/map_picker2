@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './GameSelector.css';
 
 declare interface GameSelectorProps {
@@ -9,13 +9,16 @@ declare interface GameSelectorProps {
 }
 
 const GameSelector: FC<GameSelectorProps> = ({ logoUrl, backgroundUrl }) => {
+  const [logo] = useState(logoUrl);
+  const [background] = useState(backgroundUrl);
+
   return (
     <div
       className="game-selector"
-      style={{ backgroundImage: `url(${backgroundUrl})` }}
+      style={{ backgroundImage: `url(${background})` }}
     >
       <div>
-        <img src={logoUrl} className="game-selector" alt="logo" />
+        <img src={logo} className="game-selector" alt="logo" />
       </div>
     </div>
   );
