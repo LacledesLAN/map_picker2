@@ -16,11 +16,8 @@ const MapPicker: FC = () => {
 
   return (
     <div className="game-container">
-      <GameSelector logoUrl={csgoLogo} backgroundUrl={csgoBackground} />
-      <GameSelector
-        logoUrl={overwatchLogo}
-        backgroundUrl={overwatchBackground}
-      />
+      <GameSelector logo={csgoLogo} background={csgoBackground} />
+      <GameSelector logo={overwatchLogo} background={overwatchBackground} />
     </div>
   );
 };

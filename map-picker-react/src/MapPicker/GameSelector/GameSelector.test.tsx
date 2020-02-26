@@ -7,7 +7,7 @@ describe('GameSelector', () => {
     const testBackground = 'test-background-url';
 
     const testObject = render(
-      <GameSelector logoUrl="" backgroundUrl={testBackground} />
+      <GameSelector logo="" backgroundUrl={testBackground} />
     );
 
     expect(testObject.getByTestId('background')).toHaveStyle(
@@ -19,7 +19,7 @@ describe('GameSelector', () => {
     const testLogo = 'test-logo-url';
 
     const testObject = render(
-      <GameSelector logoUrl={testLogo} backgroundUrl="" />
+      <GameSelector logo={testLogo} backgroundUrl="" />
     );
     const img = await testObject.findByAltText('logo');
     expect(img).toHaveAttribute('src', testLogo);
