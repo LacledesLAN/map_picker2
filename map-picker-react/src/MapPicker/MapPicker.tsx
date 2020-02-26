@@ -2,12 +2,11 @@ import React, { FC, useState } from 'react';
 import './MapPicker.css';
 import GameSelector from './GameSelector/GameSelector';
 
-const csgoLogoUrl = '../assets/images/map_picker/csgo/logo_white.png';
-const csgoBackgroundUrl =
-  '../assets/images/map_picker/csgo/logo_background.jpg';
-const overwatchLogoUrl = '../assets/images/map_picker/overwatch/logo_white.png';
+const csgoLogoUrl = 'assets/images/map_picker/csgo/logo_white.png';
+const csgoBackgroundUrl = 'assets/images/map_picker/csgo/logo_background.jpg';
+const overwatchLogoUrl = 'assets/images/map_picker/overwatch/logo_white.png';
 const overwatchBackgroundUrl =
-  '../assets/images/map_picker/overwatch/logo_background.jpg';
+  'assets/images/map_picker/overwatch/logo_background.jpg';
 
 const MapPicker: FC = () => {
   const [csgoLogo] = useState(csgoLogoUrl);
