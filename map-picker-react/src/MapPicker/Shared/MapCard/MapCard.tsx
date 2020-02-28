@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import './MapCard.css';
 import Map from '../../../data/Map';
 
 interface MapCardProps {
@@ -6,12 +7,12 @@ interface MapCardProps {
 }
 
 const MapCard: FC<MapCardProps> = ({ gameMap }) => {
-  const cardStyle = {
-    background: `url(${gameMap.imageUrl})`
-  };
-
   return (
-    <div key={gameMap.id} className={gameMap.name} style={cardStyle}>
+    <div
+      key={gameMap.id}
+      className={(gameMap.name, 'map-card')}
+      style={{ background: `url(${gameMap.imageUrl})` }}
+    >
       <p>{gameMap.name}</p>
     </div>
   );

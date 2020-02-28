@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { GridList, GridListTile } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Map from '../../data/Map';
 import MapCard from '../Shared/MapCard/MapCard';
 
@@ -9,16 +9,16 @@ interface PickBanProps {
 
 const PickBan: FC<PickBanProps> = ({ gameMaps }) => {
   return (
-    <GridList cellHeight={'auto'} cols={4}>
+    <Grid container className="mapGrid" spacing={0} alignItems="stretch">
       {gameMaps.map(gameMap => (
-        <GridListTile>
+        <Grid className="mapTile" item xs={3}>
           <MapCard key={gameMap.id} gameMap={gameMap}></MapCard>
-        </GridListTile>
+        </Grid>
       ))}
-      <GridListTile>
+      <Grid className="controlTile" item xs={3}>
         <p>Controls</p>
-      </GridListTile>
-    </GridList>
+      </Grid>
+    </Grid>
   );
 };
 

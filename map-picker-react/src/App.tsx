@@ -8,19 +8,17 @@ import './App.css';
 const App: FC = () => {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route path="/" exact>
-            <MapPicker />
-          </Route>
-          <Route path="/csgo">
-            <PickBan gameMaps={csgoMaps} />
-          </Route>
-          <Route path="/overwatch">
-            <Overwatch />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/" exact>
+          <MapPicker />
+        </Route>
+        <Route path="/csgo">
+          <PickBan gameMaps={csgoMaps} />
+        </Route>
+        <Route path="/overwatch">
+          <Overwatch />
+        </Route>
+      </Switch>
     </Router>
   );
 };
