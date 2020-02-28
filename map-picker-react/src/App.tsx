@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { csgoMaps } from './data/csgoMaps';
 import MapPicker from './MapPicker/MapPicker';
+import PickBan from './MapPicker/PickBan/PickBan';
 import './App.css';
 
 const App: FC = () => {
@@ -12,7 +14,7 @@ const App: FC = () => {
             <MapPicker />
           </Route>
           <Route path="/csgo">
-            <CsGo />
+            <PickBan gameMaps={csgoMaps} />
           </Route>
           <Route path="/overwatch">
             <Overwatch />
@@ -21,10 +23,6 @@ const App: FC = () => {
       </div>
     </Router>
   );
-};
-
-const CsGo: FC = () => {
-  return <h2>CS Go map selection</h2>;
 };
 
 const Overwatch: FC = () => {
