@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import './MapPicker.css';
 import GameSelector from './GameSelector/GameSelector';
 
@@ -9,15 +9,18 @@ const overwatchBackgroundUrl =
   'assets/images/map_picker/overwatch/logo_background.jpg';
 
 const MapPicker: FC = () => {
-  const [csgoLogo] = useState(csgoLogoUrl);
-  const [csgoBackground] = useState(csgoBackgroundUrl);
-  const [overwatchLogo] = useState(overwatchLogoUrl);
-  const [overwatchBackground] = useState(overwatchBackgroundUrl);
-
   return (
     <div className="game-container">
-      <GameSelector logo={csgoLogo} background={csgoBackground} />
-      <GameSelector logo={overwatchLogo} background={overwatchBackground} />
+      <GameSelector
+        logo={csgoLogoUrl}
+        background={csgoBackgroundUrl}
+        link="/csgo"
+      />
+      <GameSelector
+        logo={overwatchLogoUrl}
+        background={overwatchBackgroundUrl}
+        link="/overwatch"
+      />
     </div>
   );
 };
