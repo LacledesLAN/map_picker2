@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
-import './MapCard.css';
+import './MapTile.css';
 import Map from '../../../data/Map';
 
-interface MapCardProps {
+interface MapTile {
   gameMap: Map;
 }
 
-const MapCard: FC<MapCardProps> = ({ gameMap }) => {
+const MapTile: FC<MapTile> = ({ gameMap }) => {
   return (
     <div
       key={gameMap.id}
-      className={(gameMap.name, 'map-card')}
+      className={(gameMap.name, 'MapTile')}
       style={{ background: `url(${gameMap.imageUrl})` }}
     >
       <p>{gameMap.name}</p>
@@ -18,4 +18,4 @@ const MapCard: FC<MapCardProps> = ({ gameMap }) => {
   );
 };
 
-export default MapCard;
+export default MapTile;
