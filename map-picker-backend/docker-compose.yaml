@@ -1,0 +1,20 @@
+version: '3.5'
+
+services: 
+    mongo:
+        image: mongo:4.2.7
+        restart: always
+        environment: 
+            MONGO_INITDB_DATABASE: mapPicker
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+        volumes: 
+            - ./mongodb:/docker-entrypoint-initdb.d:ro
+        ports: 
+            - 27017:27017
+
+    golang-api: 
+        build: ./golang 
+        restart: always
+        ports: 
+            - 8080:8080

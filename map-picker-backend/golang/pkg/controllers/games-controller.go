@@ -60,12 +60,6 @@ func GetGameByID(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	gameId, _ := strconv.Atoi(vars["gameId"])
 	fmt.Println(gameId)
-	//ID, err:=strconv.ParseInt(gameId, 0 , 0)
-	//if err != nil {
-	//	fmt.Fprintf(w, "Error while parsing. '%v' is not a number", gameId)
-	//}
-
-	//game := gojsonq.New().FromString(json).Where("id", "=", ID)
 
 	var b bytes.Buffer
 
@@ -74,27 +68,42 @@ func GetGameByID(w http.ResponseWriter, r *http.Request) {
 
 	gojsonq.New().JSONString(json).From("games.["+ vars["gameId"] +"]").Writer(&b)
 
-	//if err != nil {
-	//	fmt.Fprintf(w, "Error")
-	//}
-
 
 	w.Header().Set("Content-Type", "application/json")
 	fmt.Fprint(w, b.String())
-
-
 
 }
 
 func GetGameByName(w http.ResponseWriter, r *http.Request) {
 	vars:= mux.Vars(r)
 	gameName := vars["gameName"]
-	//if err != nil {
-	//	fmt.Fprint(w, "You must provide a game name")
-	//}
+
+
+	var b bytes.Buffer
+	gojsonq.New().JSONString(json).From("games").WhereEqual("name", gameName).Writer(&b)
 
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprintf(w, "You searched for %v", gameName)
+	fmt.Fprintf(w, b.String())
+}
+
+func GetGameMapList(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	fmt.Println(vars)
+	//gameId, _ := strconv.Atoi(vars["gameId"])
+	//mapListOnly := vars["maplistonly"]
+	//fmt.Println(gameId)
+	//fmt.Println(mapListOnly)
+
+	//var b bytes.Buffer
+	//
+	//if  mapListOnly == "yes" {
+	//	gojsonq.New().JSONString(json).From("games.["+ vars["gameId"] +"].gameMapList").Writer(&b)
+	//} else {
+	//	gojsonq.New().JSONString(json).From("games.["+ vars["gameId"] +"]").Writer(&b)
+	//}
+	//
+	//w.Header().Set("Content-Type", "application/json")
+	//fmt.Fprintf(w, b.String())
 }
 
 func UpdateGame(w http.ResponseWriter, r *http.Request) {
