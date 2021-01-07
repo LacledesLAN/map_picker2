@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import './GameSelector.css';
+import React, { FC } from "react";
+import { Link } from "react-router-dom";
+import "./GameSelector.css";
 
 declare interface GameSelectorProps {
   gameId?: number;

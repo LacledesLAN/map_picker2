@@ -7,7 +7,7 @@ describe('GameSelector', () => {
     const testBackground = 'test-background-url';
 
     const testObject = render(
-      <GameSelector logo="" background={testBackground} />
+      <GameSelector logo="" background={testBackground} link="" />
     );
 
     expect(testObject.getByTestId('background')).toHaveStyle(
@@ -18,7 +18,7 @@ describe('GameSelector', () => {
   it('displays a logo that is passed in as a prop', async () => {
     const testLogo = 'test-logo-url';
 
-    const testObject = render(<GameSelector logo={testLogo} background="" />);
+    const testObject = render(<GameSelector logo={testLogo} background="" link="" />);
     const img = await testObject.findByAltText('logo');
     expect(img).toHaveAttribute('src', testLogo);
   });

@@ -1,3 +1,4 @@
-.App {
-  text-align: center;
+.AppContainer {
+  display: flex;
+  width: 100%;
 }

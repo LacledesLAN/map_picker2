@@ -1,26 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  border: 0px none;
-  margin: 0px;
-  padding: 0px;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  color: #fff;
-  font-size: 140%;
-  font-family: leagueGothic;
-  text-shadow: -2px 0px 8px #333, 0px 0px 5px #000;
-  display: flex;
+  padding: 0;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -35,4 +19,3 @@ html {
   height: 100%;
   width: 100%;
 }
-
